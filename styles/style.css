@@ -1,0 +1,22 @@
+.app {
+  width: 375px;   /* iPhone X width */
+  height: auto;  /* iPhone X height */
+  border: 1px solid #333;
+  overflow-y: auto;
+}
+
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+body {
+  background: rgb(20, 20, 21);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+

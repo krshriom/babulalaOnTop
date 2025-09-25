@@ -1,0 +1,107 @@
+/* Header */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: rgb(20, 20, 21);
+}
+.logo {
+  margin-left: -8px;
+  cursor: pointer;
+  align-items: left;
+}
+.logo-top {
+  height: 32px;
+  
+}
+.auth-buttons .btn {
+  margin-left: 8px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.login {
+  background: #333; 
+  color: #fff; 
+}
+
+.register { 
+  background: #00c853; 
+  color: #fff; 
+}
+
+
+
+/* Bottom navigation */
+/* .bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgb(20, 20, 21);
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+  border-top: 1px solid rgba(36, 36, 38, 0.884);
+  display: flex;
+}
+.bottom-logo {
+  width: auto;
+  height: 28px;
+  display: flex;
+  justify-content: space-between;
+}
+.bottom-nav-icon {
+  align-content: center;
+}
+.bottom-logo-name {
+  display: flex;
+}
+.bottom-nav a {
+  color: #aaa;
+  font-size: 14px;
+  text-decoration: none;
+}
+.bottom-nav a.active {
+  color:rgb(0, 117, 255);
+} */
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgb(20, 20, 21);
+  display: flex;
+  justify-content: space-around;
+  padding: 8px 0;
+  border-top: 1px solid rgba(36, 36, 38, 0.884);
+}
+
+.bottom-nev-icon {
+  display: flex;
+  flex-direction: column; /* stack icon above text */
+  align-items: center;    /* center horizontally */
+  justify-content: center;
+  gap: 4px;               /* space between icon and text */
+}
+
+.bottom-logo img {
+  height: 26px;
+  width: auto;
+  display: block;
+}
+
+.bottom-logo-name a {
+  color: #aaa;
+  font-size: 10px;
+  text-decoration: none;
+}
+
+.bottom-logo-name a.active {
+  color: rgb(0, 117, 255);
+}
+

@@ -1,0 +1,132 @@
+
+/* Slider */
+ /*
+.banner {
+
+  border: #00c853;                              figgre out
+  border-width: 100px; 
+}*/
+.slider {
+  margin: 0 8px;
+  position: relative;
+  overflow: hidden;
+  height: 180px;
+  border-radius: 25px;
+  }
+
+.slides {
+  display: flex;
+  width: 500%; /* 5 slides */
+  animation: slideLoop 16s infinite;
+  margin-left: -660px ;         /* ----------     you changed yourself */
+}
+
+.slide {
+  min-width: 100%;
+}
+
+.slide img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  border-radius: 10px;
+}
+/* 5 slides: each ~5s stay, ~0.33s move */
+@keyframes slideLoop {
+  /* Slide 1 stays */
+  0%    { transform: translateX(0); }
+  19.2% { transform: translateX(0); }
+
+  /* Move to slide 2 */
+  20.0% { transform: translateX(-100%); }
+
+  /* Slide 2 stays */
+  20.0%, 39.2% { transform: translateX(-100%); }
+
+  /* Move to slide 3 */
+  40.0% { transform: translateX(-200%); }
+
+  /* Slide 3 stays */
+  40.0%, 59.2% { transform: translateX(-200%); }
+
+  /* Move to slide 4 */
+  60.0% { transform: translateX(-300%); }
+
+  /* Slide 4 stays */
+  60.0%, 79.2% { transform: translateX(-300%); }
+
+  /* Move to slide 5 */
+  80.0% { transform: translateX(-400%); }
+
+  /* Slide 5 stays */
+  80.0%, 99.2% { transform: translateX(-400%); }
+
+  /* Back to slide 1 */
+  100%  { transform: translateX(0); }
+}
+
+/* Add easing only to transforms */
+.slides {
+  transition: transform 0.5s ease-in-out;
+}
+
+
+/* Promo cards */
+.promos {
+  display: flex;
+  gap: 10px;
+  padding: 12px; 
+}
+.promo-card {
+  position: relative;
+  color: rgb(210, 208, 208);
+  border-radius: 20px;
+  /* overflow: hidden;
+  text-align: center;                               job   done 
+  transition: transform 0.3s; */
+}
+
+.jeep-card {
+  flex: 2;
+  background: linear-gradient(120deg, #d946ef, #6366f1, #3b82f6);
+}
+.gift-card {
+  flex: 1;
+}
+
+.text {
+  margin: 20px 12px;
+  align-items: left;
+  font-size: 13px;
+  display: inline-block;
+}
+.text-with-bg {
+  display: inline-block;
+  padding: 2px 8px;
+  font-weight: bolder;
+  background-color: rgba(174, 172, 172, 0.379);
+  border: none;
+  border-radius: 12px;
+  position:relative;
+}
+.text-with-bg-money {
+  margin-top: 0.6px;
+}
+.jeep-box {
+  position: absolute;
+  top: 20px;
+  bottom: 20px;
+  right: 1px;
+  display: inline-block;
+  align-items: right;
+  z-index: 2;
+  width: 140px;
+}
+.promo-card img {
+   width: 100%;
+/*  height: auto; */
+  border-radius: 8px;
+  object-fit: cover;
+  object-position: right;
+}
+

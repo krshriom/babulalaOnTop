@@ -1,0 +1,74 @@
+
+/* Games */
+.games {
+  padding: 12px;
+}
+.section-header {
+  position: relative;
+  left: 8px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.game-head {
+  display: flex;
+  margin-top: 8px;
+}
+.game1-logo {
+  margin-top: -4px;
+  height: 25px;
+}
+/* .game1-logo-box-app {
+  height: 24px;
+
+} */
+.game-head-name {
+  font-size: 10px;
+  margin-left: 8px;
+}
+.all-g-but {
+  display: flex;
+  position: relative;
+  right: 8px;
+  background-color: rgba(179, 182, 189, 0.12);
+  color: rgb(198, 198, 198);
+  border: none;
+  border-radius: 18px;
+  padding: 8px 14px 0px 14px;
+  font-weight: bolder;
+}
+.nev-arrow{
+  margin-top: -12px;
+  font-size: 30px;
+  color: #949494;
+  font-weight: 50;
+  margin-left: 10px;
+
+}
+/* game cards */
+.games-row {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+  scrollbar-width: none; 
+}
+.games-row::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+.game-card {
+  min-width: 120px;
+  background: #1e1e1e;
+  border-radius: 12px;
+  /* padding: 6px; */
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+.game-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+.game-card:hover {
+  transform: scale(1.08);
+}

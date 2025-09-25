@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Loading</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #000000, #242525);
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+      color: #fff;
+    }
+
+    /* Bouncing ball */
+    .ball {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #1b1b1b, #313131);
+      animation: bounce 5s infinite ease-in-out;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      20% {
+        transform: translateY(-20px);
+      }
+    }
+
+    /* Progress bar container */
+    .progress-bar {
+      width: 80%;
+      max-width: 400px;
+      height: 12px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 6px;
+      overflow: hidden;
+      margin-top: 160px;
+      border: 2px solid white;
+    }
+
+    /* Fill */
+    .progress-fill {
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #b5b5b5 , #fffdfb);
+      border-radius: 6px;
+      transition: width 0.2s linear;
+    }
+
+    .progress-text {
+      margin-top: 8px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="ball"></div>
+
+  <div class="progress-bar">
+    <div class="progress-fill" id="progress-fill"></div>
+  </div>
+  <div class="progress-text" id="progress-text">0%</div>
+
+  <!-- <script>
+    let progress = 0;
+    const fill = document.getElementById("progress-fill");
+    const text = document.getElementById("progress-text");
+
+    const interval = setInterval(() => {
+      progress += 2; // loading speed
+      if (progress > 100) progress = 100;
+
+      fill.style.width = progress + "%";
+      text.textContent = progress + "%";
+
+      if (progress === 100) {
+        clearInterval(interval);
+        setTimeout(() => {
+          window.location.href = "game.html"; // redirect page
+        }, 5000000);
+      }
+    }, 1000000);
+  </script> -->
+ <script>
+  let progress = 0;
+  const fill = document.getElementById("progress-fill");
+  const text = document.getElementById("progress-text");
+
+  function updateProgress(value) {
+    progress = value;
+    fill.style.width = progress + "%";
+    text.textContent = progress + "%";
+  }
+
+  setTimeout(() => {
+    // Stage 1 → instantly to 27%
+    updateProgress(5);
+      
+    setTimeout(() => {
+      // Stage 1 → instantly to 27%
+      updateProgress(10);
+          
+      setTimeout(() => {
+        // Stage 1 → instantly to 27%
+        updateProgress(15);
+              
+        setTimeout(() => {
+          // Stage 1 → instantly to 27%
+          updateProgress(22);
+
+          setTimeout(() => {
+            // Stage 1 → instantly to 27%
+            updateProgress(27);
+
+            setTimeout(() => {
+              // Stage 2 → instantly to 67%
+              updateProgress(67);
+
+              setTimeout(() => {
+                // Stage 3 → slowly 67 → 87 in 10 sec
+                let current = 67;
+                const step = (87 - 67) / (10 * 10); // 20 steps per second for 10s
+                const interval3 = setInterval(() => {
+                  current += step;
+                  if (current >= 87) {
+                    current = 87;
+                    clearInterval(interval3);
+
+                    // Stage 4 → 87 → 96 in 60 sec
+                    let current4 = 87;
+                    const step4 = (96 - 87) / (60 * 10);
+                    const interval4 = setInterval(() => {
+                      current4 += step4;
+                      if (current4 >= 96) {
+                        current4 = 96;
+                        clearInterval(interval4);
+
+                        // Stage 5 → crawl to 99 forever
+                        let current5 = 96;
+                        const interval5 = setInterval(() => {
+                          if (current5 < 99) {
+                            current5 += 1; // extremely slow crawl
+                            updateProgress(current5.toFixed(2));
+                          }
+                        }, 5000000); // every half sec
+                      }
+                      updateProgress(current4.toFixed(2));
+                    }, 100);
+                  }
+                  updateProgress(current.toFixed(2));
+                }, 100);
+              }, 1000); // wait 1 sec at 67
+            }, 6000); // wait 1 sec at 27
+          }, 5000);  
+        }, 4000)
+      }, 3000)
+    }, 2000)
+  }, 1000)
+</script> 
+  <!-- <script>
+  let progress = 0;
+  const fill = document.getElementById("progress-fill");
+  const text = document.getElementById("progress-text");
+
+  function updateProgress(value) {
+    progress = value;
+    fill.style.width = progress + "%";
+    text.textContent = Math.floor(progress) + "%";
+  }
+
+  // Stage 1 → instantly to 27%
+  updateProgress(27);
+
+  setTimeout(() => {
+    // Stage 2 → instantly to 67%
+    updateProgress(67);
+
+    setTimeout(() => {
+      // Stage 3 → slowly 67 → 87 in 10 sec
+      let current = 67;
+      const step = (87 - 67) / (10 * 10); 
+      const interval3 = setInterval(() => {
+        current += step;
+        if (current >= 87) {
+          current = 87;
+          clearInterval(interval3);
+
+          // Stage 4 → 87 → 96 in 60 sec
+          let current4 = 87;
+          const step4 = (96 - 87) / (60 * 10);
+          const interval4 = setInterval(() => {
+            current4 += step4;
+            if (current4 >= 96) {
+              current4 = 96;
+              clearInterval(interval4);
+
+              // Stage 5 → crawl to 99 forever
+              let current5 = 96;
+              const interval5 = setInterval(() => {
+                if (current5 < 99) {
+                  current5 += 0.01;
+                  updateProgress(current5.toFixed(2));
+                }
+              }, 500);
+            }
+            updateProgress(current4.toFixed(2));
+          }, 100);
+        }
+        updateProgress(current.toFixed(2));
+      }, 100);
+    }, 1000); // wait 1s at 67
+  }, 1000); // wait 1s at 27
+</script> -->
+
+</body>
+</html>
